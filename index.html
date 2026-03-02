@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> Allen Garcia | Portfolio </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <video autoplay muted loop playsinline id="bg-video"> 
+        <source src="assets/computer-retro.mp4" type="video/mp4" /> </video>
+        <header class="site-header">
+            <nav class="nav">
+                <a class="logo" href="#"> Allen Garcia </a>
+                <div class="nav-links">
+                    <a href="#resume">Resume</a>
+                    <button class="nav-btn" data-modal="aboutModal">About</button>
+                    <button class="nav-btn" data-modal="projectsModal">Projects</button>
+                    <button class="nav-btn" data-modal="contactModal">Contact</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <div class="hero-panel">
+                    <h1>Hi, I'm Allen</h1>
+                    <p>
+                        I'm a sophomore at Harvard, studying electrical engineering and computer science! I'm interested in data science and 
+                        its applications in finance/tech. As well as the engineering design side of electronics (though I like Hardware as well).
+                    </p>
+                    <div class="hero-buttons">
+                        <a class="button" href="#projects">View Projects</a>
+                        <button class="button button-outline nav-btn" data-modal="contactModal">Contact</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="projects" class="section">
+                <h2> Currently working on...</h2>
+
+                <div class="grid">
+                    <article class="card">
+                        <h3>Conflux: Magical Room </h3>
+                        <p>Short description...</p>
+                        <div class="card-links">
+                            <a href="#" target="_blank" rel="noreferrer">Demo</a>
+                            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="past-projects" class="section">
+            <h2> Past Projects</h2>
+
+            <div class="hscroll" aria-label="Past projects horizontal scroller">
+                <article class="card">
+                  <h3> Cadence — MakeMIT x Harvard (February, 2026)</h3>
+            
+                  <img class="card-thumb" src="images/ccadence_portfolio-3.png" alt="Cadence preview" loading="lazy">
+            
+                  <!-- ✅ short description -->
+                  <p>
+                   A hybrid glove + computer-vision MIDI instrument that fuses flex sensors, IMU tracking, and gesture velocity detection to turn real hand motion into expressive, performance-ready music control.
+                  </p>
+            
+                  <div class="card-links">
+                    <!-- ✅ opens big modal -->
+                    <button class="card-link-btn card-more nav-btn" data-modal="cadenceModal">
+                    More
+                    </button>
+                    <a href="https://github.com/so2zhang/MakeMIT2026" target="_blank" rel="noreferrer">GitHub</a>
+                  </div>
+                </article>
+                <article class="card">
+                    <h3> AM Signal Processing Circuit Design (October, 2025)</h3>
+                    <img class="card-thumb" src="images/am_transceiver_portfolioo.png" alt="AM signal processing preview" loading="lazy">
+                    <p>Designed a multi-carrier AM transmitter and receiver in ES 152: Circuits, Devices, and Transduction, implementing analog multiplication, filtering, and frequency-selective demodulation in LTspice.</p>
+                    <div class="card-links">
+                    <button class="card-link-btn card-more nav-btn" data-modal="amModal">
+                    More
+                    </button>
+                        <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                    </div>
+                </article> 
+                <article class="card">
+                    <h3> Harmoni Glove (March, 2025) </h3>
+                    <img class="card-thumb" src="images/projects/harmoni.png" alt="Harmoni Glove preview" loading="lazy">
+                    <p>Short description.</p>
+                    <div class="card-links">
+                        <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                        <!--add more modal thing-->
+                    </div>
+                </article>
+              </div>              
+            </section>
+
+  
+
+            <section id="resume" class="section">
+                <h2>Resume</h2>
+                <p>
+                    <a href="assets/resume.pdf" target="_blank" rel="noreferrer">
+                        Download or look at my resume (PDF)
+                    </a>
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p> <span id="year"></span> Allen Garcia</p>
+        </footer>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+        <!--Moda Overlay-->
+        <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
+
+        <!-- ABOUT WINDOW -->
+        <section class="pixel-window modal" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" aria-hidden="true">
+            <header class="pixel-titlebar">
+                <span id="aboutTitle" class="pixel-title">ABOUT</span>
+                <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+            </header>
+            <div class="pixel-content">
+                <p>
+                    Write your “about me” here. Keep it short + personal.
+                </p>
+                <p>
+                    Example: EE/CS student at Harvard building interactive systems, data tools, and hardware projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- PROJECTS WINDOW -->
+         <section class="pixel-window modal" id="projectsModal" role="dialog" aria-modal="true" aria-labelledby="projectsTitle" aria-hidden="true">
+            <header class="pixel-titlebar">
+                <span id="projectsTitle" class="pixel-title">PROJECTS</span>
+                <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+            </header>
+            <div class="pixel-content">
+                <ul class="pixel-list">
+                    <li><span class="bullet">•</span> Mictlán Maze Game — HTML/CSS/JS</li>
+                    <li><span class="bullet">•</span> Harmoniglove — Arduino + sensors + LEDs</li>
+                    <li><span class="bullet">•</span> HDAG — analytics + research pipelines</li>
+                </ul>
+            </div>
+        </section>
+        <!-- CONTACT WINDOW -->
+        <section class="pixel-window modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+            <header class="pixel-titlebar">
+                <span id="contactTitle" class="pixel-title">CONTACT</span>
+                <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+            </header>
+            <div class="pixel-content">
+                <p>Email: <a href="mailto:you@example.com">allengarcia@college.harvard.edu</a></p>
+                <p>
+                    <a href="https://www.linkedin.com/in/allenga777/" target="_blank" rel="noreferrer">LinkedIn</a> ·
+                    <a href="https://github.com/allenjavil" target="_blank" rel="noreferrer">GitHub</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- CADENCE CASE STUDY WINDOW -->
+        <section class="pixel-window modal modal-lg" id="cadenceModal"
+          role="dialog" aria-modal="true" aria-labelledby="cadenceTitle" aria-hidden="true">
+        
+          <header class="pixel-titlebar">
+            <span id="cadenceTitle" class="pixel-title">CADENCE — CASE STUDY</span>
+            <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+          </header>
+
+          <!-- ✅ scrolls inside -->
+          <div class="pixel-content modal-scroll">
+            <div class="case-hero-full">
+              <img class="case-hero-banner"
+                   src="images/candence_more_portfolio.png"
+                   alt="Cadence hero banner"
+                   loading="lazy">
+            </div>
+                <p>
+                  Cadence is a hybrid glove + camera MIDI controller that turns real hand motion into expressive music control.
+                  It fuses glove sensors (ESP32) with webcam hand tracking (MediaPipe) to drive notes, CCs, and a live harmonic bed.
+                </p>
+          
+        
+            <h4 class="case-h">What it does</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Glove sensors (ESP32): 4 flex sensors, thumb touch/pressure ADC, hall sensors, IMU.</li>
+              <li><span class="bullet"></span> Webcam tracking (MediaPipe): finger bend + hand position from a single hand.</li>
+              <li><span class="bullet"></span> Gesture velocity triggers note-on/off (fast vs slow EMA) for “pluck” style playing.</li>
+              <li><span class="bullet"></span> Thumb pressure → MIDI CC27, wrist pitch → CC28 + octave bias.</li>
+              <li><span class="bullet"></span> Hand X/Y → CC25/26; hall sensors can act like sustain (CC64).</li>
+              <li><span class="bullet"></span> Built-in harmonic engine: Markov/chord-library pad on MIDI ch2 while melody plays on ch1.</li>
+            </ul>
+        
+            <h4 class="case-h">How we built it</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> ESP32 streams compact CSV sensor data over serial/Bluetooth (supports multiple formats).</li>
+              <li><span class="bullet"></span> Python engine: robust serial reader + MediaPipe + Madgwick AHRS for stable pitch.</li>
+              <li><span class="bullet"></span> Sensor fusion + smoothing (EMAs/deadbands) for responsiveness without jitter.</li>
+              <li><span class="bullet"></span> MIDI out via mido + rtmidi (“GestureHand MIDI”) → works with any DAW/synth.</li>
+            </ul>
+        
+            <h4 class="case-h">Challenges</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Noisy sensors + dropped frames → needed strong filtering + fallback behavior.</li>
+              <li><span class="bullet"></span> Latency vs stability → tuned fast/slow EMA and attack detection.</li>
+              <li><span class="bullet"></span> Sensor direction mismatches → per-sensor inversion + calibration.</li>
+              <li><span class="bullet"></span> IMU drift/alignment → calibration, deadbanding, smoothing to avoid twitchy octave jumps.</li>
+              <li><span class="bullet"></span> Musical feel → deadbands for CC spam, auto note-off aging, careful thresholds.</li>
+            </ul>
+        
+            <h4 class="case-h">What we’re proud of</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Natural gesture-to-note triggering using bend velocity (not static thresholds).</li>
+              <li><span class="bullet"></span> True hybrid tracking: glove continues when vision fails; camera adds nuance when available.</li>
+              <li><span class="bullet"></span> Full performance surface: CC27/28 + CC25/26 + sustain makes it feel like an instrument.</li>
+              <li><span class="bullet"></span> Plug-and-play MIDI: virtual port works anywhere with zero special integration.</li>
+            </ul>
+        
+            <h4 class="case-h">What we learned</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Filtering + deadbands can make cheap sensors feel “premium.”</li>
+              <li><span class="bullet"></span> Calibration is UX — a wizard turns a demo into an instrument.</li>
+              <li><span class="bullet"></span> Fusion beats perfection: two imperfect systems together are more reliable.</li>
+              <li><span class="bullet"></span> Real-time systems need guardrails: auto-release, reconnection, fallback modes.</li>
+            </ul>
+        
+            <h4 class="case-h">What’s next</h4>
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Save/load user calibration + mapping profiles.</li>
+              <li><span class="bullet"></span> More gestures: pinch/tap/poses (mute, latch chord, arpeggiate).</li>
+              <li><span class="bullet"></span> Gestures influence harmony (tension, inversion, voicing).</li>
+              <li><span class="bullet"></span> Wireless polish + packaging: UI for status, mapping, and synth presets.</li>
+            </ul>
+        
+            <div class="card-links" style="margin-top: 14px;">
+              <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+              <button class="card-link-btn nav-btn" data-close>Close</button>
+            </div>
+          </div>
+        </section>
+    <!-- AM Signal Transmitter CASE STUDY WINDOW -->       
+        <section class="pixel-window modal modal-lg"
+          id="amModal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="amTitle"
+          aria-hidden="true">
+        
+          <header class="pixel-titlebar">
+            <span id="amTitle" class="pixel-title">
+              AM SIGNAL PROCESSING SYSTEM — ES 152
+            </span>
+            <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+          </header>
+        
+          <div class="pixel-content modal-scroll">
+        
+            <!-- HERO SECTION -->
+            <div class="case-hero">
+              <img class="case-image"
+                   src="assets/projects/am-overview.png"
+                   alt="AM system block diagram"
+                   loading="lazy">
+        
+              <div>
+                <p>
+                  In ES 152: Circuits, Devices, and Transduction, I designed and simulated
+                  a complete multi-carrier AM transmitter and receiver system in LTspice.
+                  The project implemented amplitude modulation using analog multipliers,
+                  frequency-selective filtering, and system-level impedance-aware design.
+                </p>
+              </div>
+            </div>
+        
+            <!-- SYSTEM ARCHITECTURE -->
+            <h4 class="case-h">System Architecture</h4>
+            <p>
+              The system encodes two independent audio signals onto separate carrier
+              frequencies (500 kHz and 1500 kHz) using amplitude modulation.
+              The modulated signals are summed onto a single transmission channel
+              and later separated and recovered through high-order filters.
+            </p>
+        
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Audio signals: 20 kHz and 10 kHz</li>
+              <li><span class="bullet"></span> Carrier frequencies: 500 kHz and 1500 kHz</li>
+              <li><span class="bullet"></span> Transmission channel: summed multi-carrier signal</li>
+              <li><span class="bullet"></span> Receiver: frequency-selective filtering + demodulation</li>
+            </ul>
+        
+            <!-- MULTIPLIER DESIGN -->
+            <h4 class="case-h">Analog Multiplier Implementation</h4>
+        
+            <img class="case-image"
+                 src="assets/projects/am-multiplier.png"
+                 alt="Analog multiplier schematic"
+                 loading="lazy">
+        
+            <p>
+              To implement amplitude modulation, I built an analog multiplier
+              using log/exp op-amp stages leveraging the exponential I-V relationship
+              of diodes. The architecture used:
+            </p>
+        
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Log amplifier stages</li>
+              <li><span class="bullet"></span> Inverting summing amplifier</li>
+              <li><span class="bullet"></span> Exponential (anti-log) stage</li>
+              <li><span class="bullet"></span> Impedance buffering between stages</li>
+            </ul>
+        
+            <p>
+              Because the multiplier only operates correctly for positive inputs,
+              DC offsets were introduced and later removed using high-pass filtering.
+              This required careful frequency-domain reasoning to eliminate
+              unwanted low-frequency terms introduced by biasing.
+            </p>
+        
+            <!-- FILTER DESIGN -->
+            <h4 class="case-h">3rd-Order Filter Design</h4>
+        
+            <img class="case-image"
+                 src="assets/projects/am-bode.png"
+                 alt="Bode plot of filters"
+                 loading="lazy">
+        
+            <p>
+              Separating closely spaced carrier frequencies required higher-order filters.
+              I designed cascaded 3rd-order low-pass and high-pass filters using a
+              hybrid RLC + RC architecture.
+            </p>
+        
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Target cutoff frequencies: 600 kHz (LPF) and 1400 kHz (HPF)</li>
+              <li><span class="bullet"></span> -60 dB/decade roll-off achieved via cascading</li>
+              <li><span class="bullet"></span> RLC resonance used to compensate RC attenuation</li>
+              <li><span class="bullet"></span> Unity gain at cutoff via resonance tuning (+3 dB compensation)</li>
+            </ul>
+        
+            <p>
+              AC sweeps (1 kHz – 1 GHz) were used to verify magnitude and phase response.
+              The design required balancing cutoff sharpness, resonance gain, and
+              impedance interactions between stages.
+            </p>
+        
+            <!-- SYSTEM INTEGRATION -->
+            <h4 class="case-h">System Integration & Impedance Management</h4>
+        
+            <img class="case-image"
+                 src="assets/projects/am-full-system.png"
+                 alt="Full AM transmitter + receiver schematic"
+                 loading="lazy">
+        
+            <p>
+              The full system integrated transmitter, summing amplifier, antenna driver,
+              and receiver filters. Each stage was designed with input/output impedance
+              in mind to prevent loading effects and frequency shifts.
+            </p>
+        
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> Buffered cascaded stages where required</li>
+              <li><span class="bullet"></span> Designed antenna driver for 50 Ω load</li>
+              <li><span class="bullet"></span> Verified time-domain modulation and recovery</li>
+              <li><span class="bullet"></span> Ensured scalability for additional carriers</li>
+            </ul>
+        
+            <!-- KEY TAKEAWAYS -->
+            <h4 class="case-h">Key Takeaways</h4>
+        
+            <ul class="pixel-list">
+              <li><span class="bullet"></span> High-order filters require both magnitude and impedance awareness.</li>
+              <li><span class="bullet"></span> Resonance can intentionally shape system-level gain.</li>
+              <li><span class="bullet"></span> Biasing tricks often introduce frequency-domain artifacts that must be filtered.</li>
+              <li><span class="bullet"></span> Modular analog blocks allow scalable communication architectures.</li>
+            </ul>
+        
+            <div class="card-links" style="margin-top: 16px;">
+              <a href="https://github.com/yourusername/am-project"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                 GitHub
+              </a>
+        
+              <button class="card-link-btn nav-btn" data-close>
+                Close
+              </button>
+            </div>
+        
+          </div>
+        </section>
+
+
+    <!--JS for pixel box or wtv-->
+    <script>
+        const overlay = document.getElementById("modalOverlay");
+        const openButtons = document.querySelectorAll("[data-modal]");
+        const modals = document.querySelectorAll(".modal");
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (!modal) return;
+
+            // Close any open modals first
+            closeAll();
+
+            overlay.classList.add("active");
+            overlay.setAttribute("aria-hidden", "false");
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeAll() {
+            overlay.classList.remove("active");
+            overlay.setAttribute("aria-hidden", "true");
+
+            modals.forEach(m => {
+            m.classList.remove("active");
+            m.setAttribute("aria-hidden", "true");
+            });
+        }
+
+        // Open buttons
+        openButtons.forEach(btn => {
+            btn.addEventListener("click", () => openModal(btn.dataset.modal));
+        });
+
+        // Close when clicking overlay
+        overlay.addEventListener("click", closeAll);
+
+        // Close when clicking any X button
+        document.addEventListener("click", (e) => {
+            if (e.target.matches("[data-close]")) closeAll();
+        });
+
+        // Close with ESC key
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeAll();
+        });
+    </script>
+    </body>
+</html>
