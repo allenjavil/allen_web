@@ -107,6 +107,27 @@ a { color: inherit; }
     flex-wrap: wrap;
 }
 
+.typing-title {
+  margin: 0 0 12px;
+  font-size: 46px;
+  letter-spacing: 1px;
+  color: #eaf0ff;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.35);
+  min-height: 56px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 6px;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* ===== Centered hero box (glass + pixel vibe) ===== */
 .hero {
   padding: 70px 0 28px;

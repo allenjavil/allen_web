@@ -4,11 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Allen Garcia | Portfolio </title>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/official_portfolio_icon32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/official_portfolio_icon16x16.png">
+        <link rel="icon" type="image/png" href="assets/official_portfolio_icon.png">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel = "stylesheet" href="style.css" />
+
     </head>
 
     <body>
@@ -29,12 +35,13 @@
         <main class="container">
             <section class="hero">
                 <div class="hero-panel">
-                    <h1>Hi, I'm Allen</h1>
-                    <p>
+                  <h1 class="typing-title">
+                    <span id="typed-name"></span><span class="cursor">|</span>
+                  </h1>
                       <p>
                         I'm a sophomore at Harvard studying Electrical Engineering and Computer Science, with interests in
                         embedded systems, hardware design, data science, and technology for finance.
-                    </p>
+                      </p>
                     <div class="hero-buttons">
                         <a class="button" href="#projects">View Projects</a>
                         <button class="button button-outline nav-btn" data-modal="contactModal">Contact</button>
@@ -46,15 +53,15 @@
               <div class="grid">
                 <article class="card">
                   <h3>Languages</h3>
-                  <p>Python, JavaScript, HTML/CSS, C, C++, MATLAB</p>
+                  <p>Python, JavaScript, HTML/CSS, C, MATLAB</p>
                 </article>
                 <article class="card">
                   <h3>Hardware / Embedded</h3>
-                  <p>Arduino, ESP32, sensors, circuit design, LTspice, PCB/system prototyping</p>
+                  <p>Arduino, ESP32, sensors, circuit design/build</p>
                 </article>
                 <article class="card">
                   <h3>Tools</h3>
-                  <p>Git/GitHub, MediaPipe, MIDI, data analysis workflows, simulation + prototyping</p>
+                  <p>Git/GitHub, LTspice, MIDI, simulation + prototyping, data analysis tools</p>
                 </article>
               </div>
             </section>
@@ -465,6 +472,24 @@
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") closeAll();
         });
+    </script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const text = "Hi, I'm Allen";
+      const typedName = document.getElementById("typed-name");
+      let index = 0;
+
+      function typeTitle() {
+        if (index < text.length) {
+          typedName.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeTitle, 120);
+        }
+      }
+
+      window.addEventListener("load", typeTitle);
     </script>
     </body>
 </html>
