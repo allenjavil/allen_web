@@ -273,39 +273,41 @@
             </div>
           </div>
         </section>
-    <!-- AM Signal Transmitter CASE STUDY WINDOW -->       
-        <section class="pixel-window modal modal-lg"
-          id="amModal"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="amTitle"
-          aria-hidden="true">
-        
-          <header class="pixel-titlebar">
-            <span id="amTitle" class="pixel-title">
-              AM SIGNAL PROCESSING SYSTEM — ES 152
-            </span>
-            <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
-          </header>
-        
-          <div class="pixel-content modal-scroll">
-        
-            <!-- HERO SECTION -->
-            <div class="case-hero">
-              <img class="case-image"
-                   src="assets/projects/am-overview.png"
-                   alt="AM system block diagram"
-                   loading="lazy">
-        
-              <div>
-                <p>
-                  In ES 152: Circuits, Devices, and Transduction, I designed and simulated
-                  a complete multi-carrier AM transmitter and receiver system in LTspice.
-                  The project implemented amplitude modulation using analog multipliers,
-                  frequency-selective filtering, and system-level impedance-aware design.
-                </p>
-              </div>
-            </div>
+      <!-- AM Signal Transmitter CASE STUDY WINDOW -->       
+          <section class="pixel-window modal modal-lg"
+            id="amModal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="amTitle"
+            aria-hidden="true">
+          
+            <header class="pixel-titlebar">
+              <span id="amTitle" class="pixel-title">
+                AM SIGNAL PROCESSING SYSTEM — ES 152
+              </span>
+              <button class="pixel-close" type="button" data-close aria-label="Close">✕</button>
+            </header>
+          
+            <div class="pixel-content modal-scroll">
+          
+              <!-- HERO SECTION -->
+      <div class="case-hero case-hero-am">
+    <div class="case-image-frame">
+      <img class="case-image case-image-am"
+          src="assets/block_diagram_am.png"
+          alt="AM system block diagram"
+          loading="lazy">
+    </div>
+
+    <div class="case-hero-copy">
+      <p>
+        In ES 152: Circuits, Devices, and Transduction, I designed and simulated
+        a complete multi-carrier AM transmitter and receiver system in LTspice.
+        The project implemented amplitude modulation using analog multipliers,
+        frequency-selective filtering, and system-level impedance-aware design.
+      </p>
+    </div>
+  </div>
         
             <!-- SYSTEM ARCHITECTURE -->
             <h4 class="case-h">System Architecture</h4>
@@ -326,11 +328,12 @@
             <!-- MULTIPLIER DESIGN -->
             <h4 class="case-h">Analog Multiplier Implementation</h4>
         
-            <img class="case-image"
-                 src="assets/projects/am-multiplier.png"
-                 alt="Analog multiplier schematic"
-                 loading="lazy">
-        
+            <div class="schematic-frame">
+              <img class="case-image case-image-schematic"
+                  src="assets/analog_mult_schematic.png"
+                  alt="Analog multiplier schematic"
+                  loading="lazy">
+            </div>
             <p>
               To implement amplitude modulation, I built an analog multiplier
               using log/exp op-amp stages leveraging the exponential I-V relationship
@@ -410,12 +413,7 @@
             </ul>
         
             <div class="card-links" style="margin-top: 16px;">
-              <a href="https://github.com/yourusername/am-project"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                 GitHub
-              </a>
-        
+  
               <button class="card-link-btn nav-btn" data-close>
                 Close
               </button>
